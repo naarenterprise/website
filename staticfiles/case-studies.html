@@ -1,0 +1,79 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Case Studies | Naar Enterprise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'site.css' %}">
+</head>
+<body>
+<header class="page-hero">
+<div class="shell">
+<nav>
+<a class="brand" href="{% url 'home' %}">
+<img class="brand-logo" src="{% static 'naar-logo.png' %}" alt="Naar Enterprise"></a>
+<div class="links">
+<a href="{% url 'about' %}">About</a>
+<a href="{% url 'services' %}">Services</a>
+<a href="{% url 'process' %}">Our process</a>
+<a href="{% url 'case_studies' %}" class="active">Case studies</a>
+<a href="{% url 'contact' %}" class="button">Talk to an expert <span class="arrow">→</span>
+</a>
+</div>
+</nav>
+<div class="page-title">
+<div>
+<div class="eyebrow">Proof in production</div>
+<h1>When every decision counts.</h1>
+</div>
+<p>How manufacturing teams are using Naar to reduce uncertainty, recover capacity and raise the quality bar.</p>
+</div>
+</div>
+</header>
+<main>
+<section>
+<div class="shell">
+<div class="case-grid">
+{% for case in case_studies %}
+<a class="case" href="{% url 'case_study_detail' case.slug %}">
+<img src="{{ case.image.url }}" alt="{{ case.title }}">
+<div class="case-text">
+<span class="tag">{{ case.tag }}</span>
+<h3>{{ case.title }}</h3>
+<p>{{ case.summary }}</p>
+</div>
+</a>
+{% empty %}
+<p>No case studies published yet. Add them in the <a href="/admin/">Django admin</a>.</p>
+{% endfor %}
+</div>
+</div>
+</section>
+<section>
+<div class="shell">
+<div class="section-head"><div><div class="eyebrow">What changes</div><h2>Impact that reaches beyond one station.</h2></div><p class="section-note">The common outcomes teams target when quality intelligence becomes part of the operation.</p></div>
+<div class="stat-grid"><div class="stat"><strong>↑</strong><span>First-pass yield</span></div><div class="stat"><strong>↓</strong><span>Manual inspection load</span></div><div class="stat"><strong>Faster</strong><span>Root cause analysis</span></div><div class="stat"><strong>Live</strong><span>Quality visibility</span></div></div>
+</div>
+</section>
+{% if featured_testimonial %}
+<section class="dark">
+<div class="shell">
+<p class="quote">“{{ featured_testimonial.quote }}”</p>
+<p class="mono" style="color:var(--acid);font-size:12px;margin-top:28px">{{ featured_testimonial.attribution }}</p>
+</div>
+</section>
+{% endif %}
+</main>
+<footer>
+<div class="shell footer-row">
+<a class="brand" href="{% url 'home' %}">
+<img class="brand-logo" src="{% static 'naar-logo.png' %}" alt="Naar Enterprise"></a>
+<small>© 2026 NAAR ENTERPRISE</small>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,100 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Contact | Naar Enterprise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'site.css' %}">
+</head>
+<body>
+<header class="page-hero">
+<div class="shell">
+<nav>
+<a class="brand" href="{% url 'home' %}">
+<img class="brand-logo" src="{% static 'naar-logo.png' %}" alt="Naar Enterprise"></a>
+<div class="links">
+<a href="{% url 'about' %}">About</a>
+<a href="{% url 'services' %}">Services</a>
+<a href="{% url 'process' %}">Our process</a>
+<a href="{% url 'case_studies' %}">Case studies</a>
+<a href="{% url 'contact' %}" class="button">Talk to an expert <span class="arrow">→</span>
+</a>
+</div>
+</nav>
+<div class="page-title">
+<div>
+<div class="eyebrow">Start a conversation</div>
+<h1>Let’s look at your line.</h1>
+</div>
+<p>Tell us about the inspection challenge in front of you. A Naar specialist will get in touch.</p>
+</div>
+</div>
+</header>
+<main>
+<section>
+<div class="shell contact-grid">
+<div>
+<div class="eyebrow">Contact details</div>
+<h2>Get the right people in the room.</h2>
+<div class="contact-list">
+<div class="contact-item">
+<small>GENERAL ENQUIRIES</small>
+<a href="mailto:hello@naarenterprise.com">hello@naarenterprise.com</a>
+</div>
+<div class="contact-item">
+<small>PARTNER WITH US</small>
+<a href="mailto:partners@naarenterprise.com">partners@naarenterprise.com</a>
+</div>
+<div class="contact-item">
+<small>LOCATIONS</small>
+<a href="mailto:hello@naarenterprise.com">Bengaluru / Detroit / Munich</a>
+</div>
+</div>
+</div>
+<form class="form" onsubmit="event.preventDefault();this.querySelector('button').textContent='Message sent';">
+<label>YOUR NAME<input required placeholder="Jane Doe">
+</label>
+<label>WORK EMAIL<input required type="email" placeholder="jane@company.com">
+</label>
+<label>COMPANY<input placeholder="Company name">
+</label>
+<label>AREA OF INTEREST<select>
+<option>Quality inspection</option>
+<option>Assembly verification</option>
+<option>Process improvement</option>
+<option>Partnership</option>
+</select>
+</label>
+<label class="wide">TELL US A LITTLE MORE<textarea placeholder="What are you hoping to make visible?">
+</textarea>
+</label>
+<button class="button wide" type="submit">Send enquiry <span class="arrow">→</span>
+</button>
+</form>
+</div>
+</section>
+<section class="dark"><div class="shell split"><div><div class="eyebrow" style="color:var(--acid)">What happens next</div><h2>We start with context, not a pitch.</h2></div><div><p style="color:#b8bfb8">Your first conversation is a working session: the product or process, the data you have, the decision you want to improve and the constraints around it. From there, we can recommend a practical next step.</p><p class="mono" style="color:var(--acid);font-size:12px">TYPICAL RESPONSE TIME: 1 BUSINESS DAY</p></div></div></section>
+<section class="cta">
+<div class="shell cta-inner">
+<div>
+<div class="eyebrow">Already a customer?</div>
+<h2>Support is always close to the line.</h2>
+</div>
+<a class="button" href="mailto:support@naarenterprise.com">Contact support <span class="arrow">→</span>
+</a>
+</div>
+</section>
+</main>
+<footer>
+<div class="shell footer-row">
+<a class="brand" href="{% url 'home' %}">
+<img class="brand-logo" src="{% static 'naar-logo.png' %}" alt="Naar Enterprise"></a>
+<small>© 2026 NAAR ENTERPRISE</small>
+</div>
+</footer>
+</body>
+</html>
