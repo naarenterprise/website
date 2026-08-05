@@ -1,0 +1,136 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Services | Naar Enterprise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'site.css' %}">
+</head>
+<body>
+<header class="page-hero">
+<div class="shell">
+<nav>
+<a class="brand" href="{% url 'home' %}">
+<img class="brand-logo" src="{% static 'naar-logo.png' %}" alt="Naar Enterprise"></a>
+<div class="links">
+<a href="{% url 'about' %}">About</a>
+<a class="active" href="{% url 'services' %}">Services</a>
+<a href="{% url 'process' %}">Our process</a>
+<a href="{% url 'case_studies' %}">Case studies</a>
+<a class="button" href="{% url 'contact' %}">Talk to an expert <span class="arrow">→</span>
+</a>
+</div>
+</nav>
+<div class="page-title">
+<div>
+<div class="eyebrow">AI engineering services</div>
+<h1>Technology that sees, learns and acts.</h1>
+</div>
+<p>We take high-value operational problems from raw data to dependable, production-ready software.</p>
+</div>
+</div>
+</header>
+<main>
+<section>
+<div class="shell">
+<div class="section-head">
+<div>
+<div class="eyebrow">Our capabilities</div>
+<h2>Four disciplines. One practical outcome.</h2>
+</div>
+<p class="section-note">Less manual uncertainty. More useful intelligence, delivered where decisions happen.</p>
+</div>
+<div class="cards">
+<article class="card">
+<span class="number">01 / MACHINE & VISION</span>
+<div>
+<h3>Inspection machine systems</h3>
+<p>We fabricate the inspection cell, fixtures, handling and optical environment, then integrate AI vision for reliable component-level decisions.</p>
+</div>
+</article>
+<article class="card">
+<span class="number">02 / MACHINE LEARNING</span>
+<div>
+<h3>Anomaly detection</h3>
+<p>Learn what normal looks like, then surface subtle departures across images, video streams and industrial sensor data.</p>
+</div>
+</article>
+<article class="card">
+<span class="number">03 / DATA & AI</span>
+<div>
+<h3>Predictive intelligence</h3>
+<p>Forecast quality risk, process drift and operational outcomes with models designed around your business signals.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="dark">
+<div class="shell">
+<div class="section-head">
+<div>
+<div class="eyebrow" style="color:var(--acid)">Vision use cases</div>
+<h2>See defects before they become downtime.</h2>
+</div>
+<p class="section-note">Computer vision is most powerful when it helps a person make the next action simpler.</p>
+</div>
+<div class="cards">
+<article class="card">
+<span class="number">A</span>
+<div>
+<h3>Defect detection</h3>
+<p>Identify scratches, cracks, dents, contamination, corrosion, incorrect colour and finishing issues at line speed.</p>
+</div>
+</article>
+<article class="card">
+<span class="number">B</span>
+<div>
+<h3>Object & thing detection</h3>
+<p>Count, locate and classify components, tools, vehicles, people or products within images and live video.</p>
+</div>
+</article>
+<article class="card">
+<span class="number">C</span>
+<div>
+<h3>OCR & traceability</h3>
+<p>Read labels, serials, codes and markings, then connect every item to a verified digital record.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section>
+<div class="shell split">
+<div>
+<div class="eyebrow">Software that carries the insight</div>
+<h2>Useful AI needs a useful product around it.</h2>
+<p>Our web and mobile development team designs operator consoles, quality dashboards, reporting tools and workflow apps that turn model output into clear action.</p>
+<p>We integrate with APIs, PLCs, cameras, ERP and existing data platforms so the solution lives naturally in your operation.</p>
+</div>
+<img class="feature-image" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1100&q=80" alt="Software engineering infrastructure">
+</div>
+</section>
+<section class="cta">
+<div class="shell cta-inner">
+<div>
+<div class="eyebrow">Bring us the hard problem</div>
+<h2>Let’s find the signal in your data.</h2>
+</div>
+<a class="button" href="{% url 'contact' %}">Discuss a project <span class="arrow">→</span>
+</a>
+</div>
+</section>
+</main>
+<footer>
+<div class="shell footer-row">
+<a class="brand" href="{% url 'home' %}">
+<img class="brand-logo" src="{% static 'naar-logo.png' %}" alt="Naar Enterprise"></a>
+<small>© 2026 NAAR ENTERPRISE</small>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,161 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>About | Naar Enterprise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'site.css' %}">
+</head>
+<body>
+<header class="page-hero">
+<div class="shell">
+<nav>
+<a class="brand" href="{% url 'home' %}">
+<img class="brand-logo" src="{% static 'naar-logo.png' %}" alt="Naar Enterprise"></a>
+<div class="links">
+<a href="{% url 'about' %}" class="active">About</a>
+<a href="{% url 'services' %}">Services</a>
+<a href="{% url 'process' %}">Our process</a>
+<a href="{% url 'case_studies' %}">Case studies</a>
+<a href="{% url 'contact' %}" class="button">Talk to an expert <span class="arrow">→</span>
+</a>
+</div>
+</nav>
+<div class="page-title">
+<div>
+<div class="eyebrow">About Naar</div>
+<h1>Built around the people who make things.</h1>
+</div>
+<p>We believe powerful industrial technology should bring clarity to the people closest to the process.</p>
+</div>
+</div>
+</header>
+<main>
+<section>
+<div class="shell split">
+<img class="feature-image" src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1100&q=80" alt="Manufacturing facility">
+<div>
+<div class="eyebrow">Our mission</div>
+<h2>Help manufacturers achieve zero defects with AI vision.</h2>
+<p>We exist to make quality inspection more certain, more consistent and more useful. Naar combines custom machine engineering with AI vision so the right decision is made for every component, every time.</p>
+<p>Our vision is a manufacturing world where preventable defects never travel downstream, and every team has the intelligence to improve at the source.</p>
+</div>
+</div>
+</section>
+<section class="dark">
+<div class="shell">
+<div class="section-head">
+<div>
+<div class="eyebrow" style="color:var(--acid)">Our vision</div>
+<h2>Quality intelligence built into every line.</h2>
+</div>
+</div>
+<div class="cards">
+<article class="card">
+<span class="number">01</span>
+<div>
+<h3>Own the whole outcome</h3>
+<p>Machine design, AI, integration and software work together because quality cannot live in silos.</p>
+</div>
+</article>
+<article class="card">
+<span class="number">02</span>
+<div>
+<h3>Make every defect actionable</h3>
+<p>We turn visual signals into a clear pass, fail or review decision with evidence teams can trust.</p>
+</div>
+</article>
+<article class="card">
+<span class="number">03</span>
+<div>
+<h3>Improve toward zero</h3>
+<p>Each inspection record makes the next process improvement more visible, measurable and achievable.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+{% if testimonials %}
+<section class="dark">
+<div class="shell">
+<div class="section-head"><div><div class="eyebrow" style="color:var(--acid)">In our clients' words</div><h2>Built to earn trust on the line.</h2></div><p class="section-note">The outcome matters most when every component affects the next operation.</p></div>
+<div class="testimonial-grid">
+{% for testimonial in testimonials %}
+<article class="testimonial"><blockquote>“{{ testimonial.quote }}”</blockquote><cite>{{ testimonial.attribution }}</cite></article>
+{% endfor %}
+</div>
+</div>
+</section>
+{% endif %}
+{% if clients %}
+<section>
+<div class="shell">
+<div class="section-head">
+<div><div class="eyebrow">Trusted by industry leaders</div><h2>Working with teams that take quality seriously.</h2></div>
+<p class="section-note">A selection of the manufacturing teams our people have supported.</p>
+</div>
+<div class="client-grid">
+{% for client in clients %}
+<div class="client"><small>{{ client.category }}</small>{{ client.name }}</div>
+{% endfor %}
+</div>
+</div>
+</section>
+{% endif %}
+{% if partners %}
+<section>
+<div class="shell">
+<div class="section-head">
+<div><div class="eyebrow">Technology partners</div><h2>Built with best-in-class collaborators.</h2></div>
+<p class="section-note">Partners that help us deliver complete vision systems on the factory floor.</p>
+</div>
+<div class="client-grid">
+{% for partner in partners %}
+<div class="client"><small>{{ partner.category }}</small>{{ partner.name }}</div>
+{% endfor %}
+</div>
+</div>
+</section>
+{% endif %}
+<section>
+<div class="shell">
+<div class="section-head">
+<div>
+<div class="eyebrow">By the numbers</div>
+<h2>A focused team, deployed globally.</h2>
+</div>
+</div>
+<div class="stat-grid">
+<div class="stat">
+<strong>12</strong>
+<span>Countries deployed</span>
+</div>
+<div class="stat">
+<strong>48</strong>
+<span>Vision engineers</span>
+</div>
+<div class="stat">
+<strong>180M+</strong>
+<span>Parts inspected</span>
+</div>
+<div class="stat">
+<strong>6 yrs</strong>
+<span>Factory experience</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="shell footer-row">
+<a class="brand" href="{% url 'home' %}">
+<img class="brand-logo" src="{% static 'naar-logo.png' %}" alt="Naar Enterprise"></a>
+<small>© 2026 NAAR ENTERPRISE</small>
+</div>
+</footer>
+</body>
+</html>
